@@ -5,7 +5,7 @@ import Particles from "react-tsparticles";
 const useStyles = makeStyles(() => ({
   particlesCanvas: {
     position: "fixed",
-    opacity: "0.8",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
 }));
 export const ParticlesComponent: FunctionComponent = () => {
@@ -50,7 +50,7 @@ export const ParticlesComponent: FunctionComponent = () => {
             speed: 6,
             straight: false,
           },
-          number: { density: { enable: true, value_area: 800 }, value: 10 },
+          number: { density: { enable: true, value_area: 800 }, value: 30 },
           opacity: {
             animation: {
               enable: true,
@@ -77,6 +77,13 @@ export const ParticlesComponent: FunctionComponent = () => {
                 src:
                   "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png",
                 width: 100,
+              },
+              {
+                height: 100,
+                replace_color: true,
+                src:
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+                width: 130,
               },
               {
                 height: 100,
@@ -129,6 +136,46 @@ export const ParticlesComponent: FunctionComponent = () => {
                 replace_color: true,
                 src:
                   "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
+                width: 100,
+              },
+              {
+                height: 100,
+                replace_color: true,
+                src:
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1024px-Bootstrap_logo.svg.png",
+                width: 100,
+              },
+              {
+                height: 100,
+                replace_color: true,
+                src:
+                  "https://banner2.cleanpng.com/20180531/sas/kisspng-bootstrap-react-software-framework-javascript-fron-5b0f9b1ab26fd7.9058729715277494027309.jpg",
+                width: 100,
+              },
+              {
+                height: 100,
+                replace_color: true,
+                src: "https://cdn.worldvectorlogo.com/logos/redux.svg",
+                width: 100,
+              },
+              {
+                height: 100,
+                replace_color: true,
+                src: "https://cdn.worldvectorlogo.com/logos/mobx.svg",
+                width: 100,
+              },
+              {
+                height: 80,
+                replace_color: true,
+                src:
+                  "https://icon-library.com/images/node-js-icon/node-js-icon-27.jpg",
+                width: 100,
+              },
+              {
+                height: 60,
+                replace_color: true,
+                src:
+                  "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
                 width: 100,
               },
             ],
