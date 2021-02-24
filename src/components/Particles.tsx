@@ -5,7 +5,6 @@ import Particles from "react-tsparticles";
 const useStyles = makeStyles(() => ({
   particlesCanvas: {
     position: "fixed",
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
 }));
 export const ParticlesComponent: FunctionComponent = () => {
