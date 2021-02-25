@@ -1,13 +1,16 @@
 import { CssBaseline } from "@material-ui/core";
 import React from "react";
-import { Introduction } from "./components/Introduction";
+import "./App.css";
+import { ContactSection } from "./components/ContactSection";
+import { IntroductionSection } from "./components/IntroductionSection";
 import { WorkingExperienceSection } from "./components/WorkingExperienceSection";
 function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Introduction />
+      <IntroductionSection />
       <WorkingExperienceSection />
+      <ContactSection />
     </React.Fragment>
   );
 }

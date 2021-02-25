@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     top: "50%",
     left: "50%",
     transform: "translate(-50%,-50%)",
-    width: "100vw",
     textAlign: "center",
     zIndex: 1,
   },
@@ -37,20 +36,22 @@ export const Profile: FunctionComponent = () => {
 
   return (
     <Container className={classes.typedContainer}>
-      <Box justifyContent="center" display="flex">
-        <Avatar
-          className={classes.avatar}
-          src={avatar}
-          alt="Jakub Stryja"
-        ></Avatar>
-      </Box>
+      <Box>
+        <Box justifyContent="center" display="flex">
+          <Avatar
+            className={classes.avatar}
+            src={avatar}
+            alt="Jakub Stryja"
+          ></Avatar>
+        </Box>
 
-      <Typography className={classes.title} variant="h2">
-        Jakub Stryja
-      </Typography>
-      <Typography className={classes.subtitle} variant="h4">
-        Frontend developer
-      </Typography>
+        <Typography className={classes.title} variant="h2">
+          Jakub Stryja
+        </Typography>
+        <Typography className={classes.subtitle} variant="h4">
+          Frontend developer
+        </Typography>
+      </Box>
     </Container>
   );
 };

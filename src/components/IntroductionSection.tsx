@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const Introduction: FunctionComponent = () => {
+export const IntroductionSection: FunctionComponent = () => {
   const classes = useStyles();
 
   return (
