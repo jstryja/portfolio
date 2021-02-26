@@ -1,9 +1,12 @@
 import {
+  Button,
   makeStyles,
   TextField,
   Typography,
   withStyles,
 } from "@material-ui/core";
+import emailjs from "emailjs-com";
+import { useFormik } from "formik";
 import React, { FunctionComponent } from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,12 +26,18 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
     color: "#fff",
-  },
-  underline: {
-    color: "#fff",
     "&:-webkit-autofill": {
       WebkitBoxShadow: "0 0 0 1000px black inset",
       WebkitTextFillColor: "#fff",
+    },
+  },
+  button: {
+    margin: theme.spacing(1),
+    color: "tomato",
+    backgroundColor: "tan",
+    fontWeight: "bold",
+    "&:hover": {
+      backgroundColor: "#d2b48ce0",
     },
   },
 }));
@@ -59,36 +68,85 @@ const InputField = withStyles((theme) => ({
 
 export const ContactSection: FunctionComponent = () => {
   const classes = useStyles();
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    onSubmit: (values) => {
+      const { name, email, message } = values;
+      alert(JSON.stringify(values, null, 2));
+      emailjs
+        .send(
+          "service_gqhbs1o",
+          "template_qpddivo",
+          { name, email, message },
+          "user_9xEHSJZZdXqF9r0GofLdO"
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          (err) => {
+            console.log("FAILED...", err);
+          }
+        );
+    },
+  });
 
   return (
     <section className={classes.section}>
       <Typography variant="h3" className={classes.sectionHeader}>
         Contact or hire me
       </Typography>
-      <form className={classes.form}>
+      <form
+        className={classes.form}
+        onSubmit={(event) => {
+          event.preventDefault();
+          formik.handleSubmit(event);
+        }}
+      >
         <InputField
           id="name"
+          name="name"
           label="Name"
           variant="outlined"
-          inputProps={{ className: classes.underline }}
+          inputProps={{ className: classes.input }}
           fullWidth
+          value={formik.values.name}
+          onChange={formik.handleChange}
         />
         <InputField
           id="email"
+          name="email"
           label="Email"
           variant="outlined"
-          inputProps={{ className: classes.underline }}
+          inputProps={{ className: classes.input }}
           fullWidth
+          value={formik.values.email}
+          onChange={formik.handleChange}
         />
         <InputField
           id="message"
+          name="message"
           label="Message"
           variant="outlined"
-          inputProps={{ className: classes.underline }}
+          inputProps={{ className: classes.input }}
           fullWidth
           multiline
           rows={6}
+          value={formik.values.message}
+          onChange={formik.handleChange}
         />
+        <Button
+          type="submit"
+          fullWidth
+          className={classes.button}
+          variant="contained"
+        >
+          Send
+        </Button>
       </form>
     </section>
   );
