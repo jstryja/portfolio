@@ -1,13 +1,15 @@
 import {
   Button,
+  Grow,
   makeStyles,
+  Snackbar,
   TextField,
   Typography,
   withStyles,
 } from "@material-ui/core";
 import emailjs from "emailjs-com";
 import { useFormik } from "formik";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -40,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#d2b48ce0",
     },
   },
+  snackbarContent: {
+    backgroundColor: "tomato",
+  },
 }));
 
 const InputField = withStyles((theme) => ({
@@ -68,6 +73,8 @@ const InputField = withStyles((theme) => ({
 
 export const ContactSection: FunctionComponent = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -76,7 +83,6 @@ export const ContactSection: FunctionComponent = () => {
     },
     onSubmit: (values) => {
       const { name, email, message } = values;
-      alert(JSON.stringify(values, null, 2));
       emailjs
         .send(
           "service_gqhbs1o",
@@ -87,9 +93,17 @@ export const ContactSection: FunctionComponent = () => {
         .then(
           (response) => {
             console.log("SUCCESS!", response.status, response.text);
+            setSnackbarMessage(
+              "Email was successfully sent! I will answer you ASAP."
+            );
+            setOpen(true);
           },
           (err) => {
             console.log("FAILED...", err);
+            setSnackbarMessage(
+              "Sorry! There was an error while sending an email. Please, try it again later."
+            );
+            setOpen(true);
           }
         );
     },
@@ -147,6 +161,22 @@ export const ContactSection: FunctionComponent = () => {
         >
           Send
         </Button>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          open={open}
+          autoHideDuration={6000}
+          onClose={() => setOpen(false)}
+          message={snackbarMessage}
+          ContentProps={{
+            classes: {
+              root: classes.snackbarContent,
+            },
+          }}
+          TransitionComponent={Grow}
+        />
       </form>
     </section>
   );
