@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.04b75590.chunk.css",
-    "main.js": "/portfolio/static/js/main.bbc49c93.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.bbc49c93.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.57134a40.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.57134a40.js.map",
+    "main.js": "/portfolio/static/js/main.f09b5a8d.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.f09b5a8d.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.0c717465.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.0c717465.js.map",
     "static/css/2.2aa38b9c.chunk.css": "/portfolio/static/css/2.2aa38b9c.chunk.css",
-    "static/js/2.53594a3a.chunk.js": "/portfolio/static/js/2.53594a3a.chunk.js",
-    "static/js/2.53594a3a.chunk.js.map": "/portfolio/static/js/2.53594a3a.chunk.js.map",
-    "static/js/3.76449a90.chunk.js": "/portfolio/static/js/3.76449a90.chunk.js",
-    "static/js/3.76449a90.chunk.js.map": "/portfolio/static/js/3.76449a90.chunk.js.map",
+    "static/js/2.6292598c.chunk.js": "/portfolio/static/js/2.6292598c.chunk.js",
+    "static/js/2.6292598c.chunk.js.map": "/portfolio/static/js/2.6292598c.chunk.js.map",
+    "static/js/3.8a321aad.chunk.js": "/portfolio/static/js/3.8a321aad.chunk.js",
+    "static/js/3.8a321aad.chunk.js.map": "/portfolio/static/js/3.8a321aad.chunk.js.map",
     "index.html": "/portfolio/index.html",
     "static/css/2.2aa38b9c.chunk.css.map": "/portfolio/static/css/2.2aa38b9c.chunk.css.map",
     "static/css/main.04b75590.chunk.css.map": "/portfolio/static/css/main.04b75590.chunk.css.map",
-    "static/js/2.53594a3a.chunk.js.LICENSE.txt": "/portfolio/static/js/2.53594a3a.chunk.js.LICENSE.txt",
+    "static/js/2.6292598c.chunk.js.LICENSE.txt": "/portfolio/static/js/2.6292598c.chunk.js.LICENSE.txt",
     "static/media/avatar.4c9f71b2.jpg": "/portfolio/static/media/avatar.4c9f71b2.jpg",
     "static/media/App.css": "/portfolio/static/media/background-mac-coffee.596a6f7b.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.57134a40.js",
+    "static/js/runtime-main.0c717465.js",
     "static/css/2.2aa38b9c.chunk.css",
-    "static/js/2.53594a3a.chunk.js",
+    "static/js/2.6292598c.chunk.js",
     "static/css/main.04b75590.chunk.css",
-    "static/js/main.bbc49c93.chunk.js"
+    "static/js/main.f09b5a8d.chunk.js"
   ]
 }
